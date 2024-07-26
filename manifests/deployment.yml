@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: gameimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gameimage
+  template:
+    metadata:
+      labels:
+        app: gameimage 
+    spec:
+      containers:
+        - name: gameimage 
+          image: myimage12.azurecr.io/gameimage
+          ports:
+          - containerPort: 80
